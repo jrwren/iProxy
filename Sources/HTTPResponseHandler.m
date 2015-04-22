@@ -78,6 +78,7 @@ static NSMutableArray *registeredHandlers = nil;
 			break;
 		}
 	}
+    if (i==1) i--;
 	[registeredHandlers insertObject:handlerClass atIndex:i];
 }
 
