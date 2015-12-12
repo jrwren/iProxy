@@ -29,7 +29,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [window addSubview:statusViewController.view];
+    //[window addSubview:statusViewController.view];
+    window.rootViewController = statusViewController;
     [window makeKeyAndVisible];
 
     application.idleTimerDisabled = YES;
@@ -39,7 +40,7 @@
     NSError *error = nil;
 
     AVAudioSession *session = [AVAudioSession sharedInstance];
-    session.delegate = self;
+    //session.delegate = self;
 
     if (![session setCategory:AVAudioSessionCategoryPlayback error:&error]) {
         NSLog(@"ERROR: audio category %@", error);
